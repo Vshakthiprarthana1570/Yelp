@@ -29,7 +29,7 @@ public class BusinessController
     @GetMapping
     public ResponseEntity<Page<BusinessSearchResult>> search
             (
-                    @RequestParam @DecimalMin("90.0") @DecimalMax("90.0") double latitude,
+                    @RequestParam @DecimalMin("-90.0") @DecimalMax("90.0") double latitude,
                     @RequestParam @DecimalMin("-180.0") @DecimalMax("180.0") double longitude,
                     @RequestParam(defaultValue = "5000") double radiusMeters,
                     @RequestParam(required = false) String category,

@@ -5,7 +5,9 @@ import com.yelp.business.repository.BusinessRepository;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.stereotype.Service;
 
+@Service
 public class BusinessService
 {
     private final BusinessRepository businessRepository;
@@ -14,7 +16,7 @@ public class BusinessService
     {
         this.businessRepository = businessRepository;
     }
-    Page<BusinessSearchResult> searchBusinesses(
+    public Page<BusinessSearchResult> searchBusinesses(
             double latitude,
             double longitude,
             double radiusMeters,

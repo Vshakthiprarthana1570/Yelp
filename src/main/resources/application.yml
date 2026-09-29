@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: yelp-business-service
+
+  datasource:
+    url: jdbc:postgresql://localhost:5433/yelp_db
+    username: postgres
+    password: admin123
+    driver-class-name: org.postgresql.Driver
+    hikari:
+        maximum-pool-size: 10
+        minimum-idle: 5
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+    baseline-on-migrate: true
